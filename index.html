@@ -1,0 +1,74 @@
+<html lang="en">
+<style>
+    .bg-image {
+        background-image: url('img/bg.jpg');
+        filter: blur(8px);
+        -webkit-filter: blur(8px);
+        height: 100%;
+        background-repeat: no-repeat; 
+        background-attachment: fixed;
+        background-size: cover;
+        position: relative;
+        z-index: 0;
+    }
+
+
+    .header{
+        position: relative;
+        z-index: 1;
+        right: 1%;
+        display: block;
+        text-align: right;
+    }
+
+    .content{
+        position: relative;
+        z-index: 1;
+        top: 20%;
+        display: block;
+        text-align: center;    
+    }
+
+    .button-content{
+        position: relative;
+        top: 25%;
+        display: block;
+        text-align: center;
+    }
+
+    .footer{
+        position: fixed;
+        bottom: 0;
+        display: inline;
+        text-align: center;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perpus MA Darussalam Awayan</title>
+</head>
+<body>
+    <div class="bg-image"></div>
+    <div class="header">
+        <button style="padding: 10px;">Login Sebagai Admin</button>
+    </div>
+    <div class="content">
+        <img src="" alt="Logo">
+        <p style="font-size: 4.5vh;">Perpustakaan MA Darussalam Awayan</p>
+    </div>
+    <div class="button-content">
+        <label for="jenis-buku"> Pilih Jenis Buku : </label>
+        <select id="jenis-buku" name="jenis-buku" style="padding: 10px;">
+            <option value="paket">Paket</option>
+            <option value="novel">Novel</option>
+            <option value="lks">LKS</option>
+          </select>
+        <input type="text" style="padding: 10px" placeholder="Ketik..."></input>
+        <button style="padding: 10px 20px;">Cari</button>
+    </div>
+    <div class="footer">
+        <p>Copyright @2024</p>
+    </div>
+</body>
+</html>
