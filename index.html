@@ -1,5 +1,6 @@
 <html lang="en">
 <style>
+
     .bg-image {
         background-image: url('img/bg.jpg');
         background-repeat: no-repeat; 
@@ -180,6 +181,11 @@
     height: 70%;
     }
 
+    .modal-content p{
+        font-size: 30px;
+        font-weight: bold;
+    }
+
     /* The Close Button */
     .close {
     color: #aaa;
@@ -195,13 +201,16 @@
     }
 
     table{
-        width: 80%;
+        max-width: 100%;
         z-index: 0;
-        position: relative;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
         border-top: 2px solid grey;
         border-bottom: 2px solid grey;
         border-collapse: collapse;
-        left: 10%;
     }
 
     thead{
@@ -212,17 +221,21 @@
 
     th{
         border: 1px solid grey;
+        padding: 10px 10px;
     }
 
     th, td{
-        padding: 7px 0;
         border-right: 1px solid grey;
         border-left: 1px solid grey;
     }
 
-    td{
+    #tablearea tr td{
+        padding: 10px 20px;
         text-align: center;
-        padding: 5px 0;
+    }
+
+    #tablearea tr td p{
+        font-size: 15px;
     }
 
     @media (max-width: 720px) {
@@ -259,6 +272,36 @@
 
         .modal-content{
             height:80%;
+        }
+
+        .modal-content p{
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        table{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        .trText th{
+            font-size: 7px;
+            padding: 7px;
+        }
+
+        #tablearea tr td{
+            padding: 2px 2px;
+        }
+
+        #tablearea tr td p{
+            font-size: 8px;
+        }
+
+        #tablearea tr td button{
+            font-size: 8px;
         }
     }
 
@@ -304,18 +347,18 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h1 style="text-align: center;">Pencarian: <span id="findText"></span></h1>
+            <p style="text-align: center;">Pencarian: <span id="findText"></span></p>
             <div>
                 <table>
                     <thead>
-                        <tr>
+                        <tr class="trText">
                             <th>No. Induk</th>
                             <th>Jenis Buku</th>
                             <th>Pengarang</th>
                             <th>Judul</th>
                             <th>Kelas</th>
                             <th>No. Lemari</th>
-                            <th class="keteranganButton">Keterangan</th>
+                            <th class="keteranganButton">Info</th>
                         </tr>
                     </thead>
                     <tbody id="tablearea"></tbody>
@@ -408,12 +451,12 @@
                     if(dbJenisBuku == selectBook && result !== null){
                         const tr = `
                             <tr data-id=${user}>
-                                <td>${users[user].noInduk}</td>
-                                <td>${users[user].jenisBuku}</td>
-                                <td>${users[user].pengarang}</td>
-                                <td>${users[user].judul}</td>
-                                <td>${users[user].kelas}</td>
-                                <td>${users[user].lemari}</td>
+                                <td><p>${users[user].noInduk}</p></td>
+                                <td><p>${users[user].jenisBuku}</p></td>
+                                <td><p>${users[user].pengarang}</p></td>
+                                <td><p>${users[user].judul}</p></td>
+                                <td><p>${users[user].kelas}</p></td>
+                                <td><p>${users[user].lemari}</p></td>
                                 <td>
                                     <button class="cek">Cek</button>
                                 </td>
@@ -426,12 +469,12 @@
                     if(selectBook == "all" && result !== null){
                         const tr = `
                             <tr data-id=${user}>
-                                <td>${users[user].noInduk}</td>
-                                <td>${users[user].jenisBuku}</td>
-                                <td>${users[user].pengarang}</td>
-                                <td>${users[user].judul}</td>
-                                <td>${users[user].kelas}</td>
-                                <td>${users[user].lemari}</td>
+                                <td><p>${users[user].noInduk}</p></td>
+                                <td><p>${users[user].jenisBuku}</p></td>
+                                <td><p>${users[user].pengarang}</p></td>
+                                <td><p>${users[user].judul}</p></td>
+                                <td><p>${users[user].kelas}</p></td>
+                                <td><p>${users[user].lemari}</p></td>
                                 <td>
                                     <button class="cek">Cek</button>
                                 </td>
