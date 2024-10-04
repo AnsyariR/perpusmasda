@@ -71,45 +71,6 @@ input{
 ::placeholder{
     color: #e5e5e5;
 }
-button#login{
-    margin-top: 50px;
-    width: 100%;
-    background-color: #ffffff;
-    color: #080710;
-    padding: 15px 0;
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button#daftar{
-    margin-top: 50px;
-    width: 100%;
-    background-color: #ffffff;
-    color: #080710;
-    padding: 15px 0;
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button#loginTab{
-    background-color: transparent;
-    font-size: 18px;
-    font-weight: 600;
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-button#daftarTab{
-    background-color: transparent;
-    font-size: 18px;
-    font-weight: 600;
-    text-decoration: underline;
-    cursor: pointer;
-}
 
 .social{
     margin-top: 30px;
@@ -130,3 +91,49 @@ button#daftarTab{
 .social i{
     margin-right: 4px;
 }
+
+@media (max-width: 720px) {
+    form{
+        width: 80%;
+        height: 80%;
+    }
+}
+    /* button#login{
+        margin-top: 50px;
+        width: 100%;
+        background-color: #ffffff;
+        color: #080710;
+        padding: 15px 0;
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    button#daftar{
+        margin-top: 50px;
+        width: 100%;
+        background-color: #ffffff;
+        color: #080710;
+        padding: 15px 0;
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    button#loginTab{
+        background-color: transparent;
+        font-size: 18px;
+        font-weight: 600;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    
+    button#daftarTab{
+        background-color: transparent;
+        font-size: 18px;
+        font-weight: 600;
+        text-decoration: underline;
+        cursor: pointer;
+    } */
