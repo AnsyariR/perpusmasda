@@ -9,15 +9,15 @@ const firebaseConfig = {
 };
 
 import {initializeApp} from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
-import {getAuth, GoogleAuthProvider, signInWithPopup} from "https://www.gstatic.com/firebasejs/9.8.2/firebase-auth.js";
+import {getAuth, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.8.2/firebase-auth.js";
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 auth.languageCode = 'en';
 const provider = new GoogleAuthProvider();
 
+// Login Google
 let googleLogin = document.querySelector("#google-login"); 
-
 googleLogin.addEventListener('click', function(){
     signInWithPopup(auth, provider)
     .then((result) => {
@@ -30,3 +30,25 @@ googleLogin.addEventListener('click', function(){
         const errorMessage = error.message;
     });
 })
+
+// Login Manual
+// let  manualLogin = document.querySelector("#login");
+// manualLogin.addEventListener('click', function(){
+//     let email = document.querySelector("#email").value;
+//     let password = document.querySelector("#password").value;
+
+//     signInWithEmailAndPassword(auth, email, password)
+//     .then((userCredential) => {
+//         // Login
+//         const user = userCredential.user;
+//         alert("Login Berhasil");
+//         sessionStorage.setItem("storage_email", email);
+//         sessionStorage.setItem("storage_password", password);
+//         window.location.href = "index.html";
+       
+//     })
+//     .catch((error) =>{
+//         alert("Email atau Password salah");
+//     })
+//     e.preventDefault(); 
+// });
