@@ -316,6 +316,12 @@
     <div class="header">
         <button style="padding: 10px;" id="login">Login Sebagai Admin</button>
     </div>
+    <script>
+        let loginButton = document.querySelector("#login");
+        loginButton.addEventListener('click', function(e){
+            window.location.href = "login.html";
+        });
+    </script>
     <div class="content">
         <img src="img/logo-MASDA.png" alt="Logo" style="width: 120px;">
         <h1>Perpustakaan MA Darussalam Awayan</h1>
