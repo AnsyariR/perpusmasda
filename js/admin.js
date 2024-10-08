@@ -9,7 +9,7 @@ const firebaseConfig = {
 };
 
 import {initializeApp} from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
-import {getDatabase, ref, set, query, onValue} from "https://www.gstatic.com/firebasejs/9.8.2/firebase-database.js";
+import {getDatabase, ref, set, query, onValue, orderByChild} from "https://www.gstatic.com/firebasejs/9.8.2/firebase-database.js";
 const app = initializeApp(firebaseConfig);
 const db = getDatabase();
 
@@ -139,33 +139,6 @@ getKatalog.then(users => {
                 `;
                 tablearea.innerHTML += tr;
             }
-            else{
-                Swal.fire({
-                    title: 'Tidak ada data buku yang dicari',
-                    icon: 'warning',
-                    confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'Oke'
-                }).then((result) => {
-                    if (result.isConfirmed){
-                        Swal.close();}
-                    const tr = `
-                        <tr data-id=${user}>
-                        <td><p>${users[user].noInduk}</p></td>
-                        <td><p>${users[user].jenisBuku}</p></td>
-                        <td><p>${users[user].pengarang}</p></td>
-                        <td><p>${users[user].judul}</p></td>
-                        <td><p>${users[user].kelas}</p></td>
-                        <td><p>${users[user].lemari}</p></td>
-                        <td>
-                            <button class="cek">Cek</button>
-                        </td>
-                        </tr>
-                    `;
-                    tablearea.innerHTML += tr;
-                })
-                e.preventDefault();
-            }
-
         }
     })
 });
