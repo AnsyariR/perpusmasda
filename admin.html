@@ -4,15 +4,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrator Perpus Masda Awayan</title>
     <link rel="stylesheet" media="screen" type="text/css" href="css/admin.css">
+
+    <script defer type="module" src="js/admin.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+        <!-- DataTables CSS -->
+        <link href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.css" rel="stylesheet">
+     
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+         
+        <!-- DataTables JS -->
+        <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+     
 </head>
 <body>
+
     <div class="header_admin">
         <img id="logo" src="img/logo-MASDA.png" alt="Logo">
         <div id="title"><p>Administrasi Perpustakaan Masda Awayan</p></div>
         <div id="logout"><button>Logout</button></div>
+    </div>
+    <div class="content_admin">
+        <button id="addButton">Tambah</button>
+        <input type="text" id="searchInput" placeholder="Cari Buku">
+        <button id="findButton">Cari</button>
+    </div>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-addBook">
+                <span class="close">&times;</span>
+                <p style="text-align: center; font-size: 30px; font-weight: bold; position: relative; left: 3%;">Tambahkan Buku <span id="findText"></span></p>
+                <div>
+                    <form action="" id="addform">
+                        <label for="noInduk">Nomor Induk<input type="text" placeholder=" ..." id="noInduk"></label>
+                        <label for="jenisBuku">Jenis Buku
+                        <select name="jenisBuku" id="jenisBuku">
+                            <option value="Paket">Paket</option>
+                            <option value="Detik">Detik</option>
+                            <option value="LKS">LKS</option>
+                            <option value="Kamus">Kamus</option>
+                            <option value="Kitab">Kitab</option>
+                            <option value="Novel">Novel</option>
+                            <option value="Komik">Komik</option>
+                        </select></label>
+                        <label for="pengarang">Pengarang<input type="text" placeholder=" ..." id="pengarang"></label>
+                        <label for="judul">Judul<input type="text" placeholder=" ..." id="judul"></label>
+                        <label for="kelas">Kelas<input type="text" placeholder=" ..." id="kelas"></label>
+                        <label for="noLemari">Nomor Lemari<input type="text" placeholder=" ..." id="noLemari"></label>
+                        <div class="center">
+                            <button id="addConfirmed">OK</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <div class="content_datatable">
+        <table>
+            <thead>
+                <tr class="trText">
+                    <th style="padding: 5px 10px;">No. Induk</th>
+                    <th style="padding: 5px 10px;">Jenis Buku</th>
+                    <th style="padding: 5px 100px;">Pengarang</th>
+                    <th style="padding: 5px 100px;">Judul</th>
+                    <th style="padding: 5px 10px;">Kelas</th>
+                    <th style="padding: 5px 10px;">No. Lemari</th>
+                    <th style="padding: 5px 10px;" class="keteranganButton">Info</th>
+                </tr>
+            </thead>
+            <tbody id="tablearea"></tbody>
+        </table>
     </div>
 </body>
 </html>

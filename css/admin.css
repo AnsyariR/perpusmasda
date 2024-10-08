@@ -1,59 +1,132 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
+* {padding: 0; margin: 0; box-sizing: border-box; font-family: 'Poppins',sans-serif;}
 
-.header_admin{
-    position: fixed;
-    z-index: 1;
-    height: 60px;
-    width: 100%;
-    background-color: forestgreen;
-}
+.header_admin{ position: fixed; z-index: 1; height: 60px; width: 100%; background-color: forestgreen;}
 
-#logo{
+#logo { position: absolute; width: 55px; top: 50%; left: 30%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);}
+#title { position: absolute; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); color: white; font-size: 20px; font-weight: 600;}
+#logout { position: absolute; top: 10px; right: 10px;}
+#logout button { border-radius: 10px; border: transparent; padding: 10px; font-size: 15px; font-weight: 400; font-family: 'Poppins',sans-serif; cursor: pointer; background: linear-gradient(to bottom right, #47ef47, #5aff9f);}
+#logout button:hover { color: aliceblue; background-color: rgb(21, 80, 40);}
+
+.content_admin{
     position: absolute;
-    width: 55px;
-    top: 50%;
-    left: 30%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
-
-#title{
-    position: absolute;
-    top: 50%;
+    /* z-index: 2; */
+    top: 15%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    color: white;
-    font-size: 20px;
-    font-weight: 600;
-    font-family: 'Poppins',sans-serif;
 }
 
-#logout{
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-#logout button{
-    border-radius: 10px;
+.content_admin button{
+    padding: 7px 10px;
     border: transparent;
-    padding: 10px;
+    border-radius: 5px;
+    background-color: #47ef47;
     font-size: 15px;
-    font-weight: 400;
-    font-family: 'Poppins',sans-serif;
-    cursor: pointer;
-    background: linear-gradient(to bottom right, #47ef47, #5aff9f);
+    font-family: poppins;
 }
 
-#logout button:hover{
-    color: aliceblue;
-    background-color: rgb(21, 80, 40);
+.content_admin input{
+    padding: 5px;
+    border: 2px solid green;
+    font-family: poppins;
 }
+
+.content_datatable{
+    /* border-collapse: collapse; */
+    position: absolute;
+    top: 20%;
+    left: 12%; 
+    /* -ms-transform: translate(-50%, -50%); */
+    /* transform: translate(-50%, -50%); */
+}
+    /* The Modal (background) */
+.modal {
+display: none; /* Hidden by default */
+position: fixed; /* Stay in place */
+z-index: 1; /* Sit on top */
+left: 0;
+top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+overflow: auto; /* Enable scroll if needed */
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-addBook {
+background-color: #fefefe;
+margin: 7.5% auto; /* 15% from the top and centered */
+padding: 20px;
+border: 1px solid #888;
+width: 40%; /* Could be more or less, depending on screen size */
+height: 70%;
+border-radius: 10px;
+}   
+
+/* .modal-addBook p{
+    font-size: 30px;
+    font-weight: bold;
+} */
+
+.modal-addBook form{
+    margin: 20px;
+    padding: 10px;
+    min-width: 100px;
+    display: inline-block;
+    border: 1px solid grey;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+    background-color: #47ef47;
+}
+
+.modal-addBook form input{
+    float: right;
+    max-width: 200px;
+    margin-left: 20px;
+    padding: 5px 0;
+    font-family: poppins;
+}
+
+.modal-addBook form select{
+    float: right;
+    width: 201px;
+    padding: 5px 0;
+    font-family: poppins;
+}
+
+.modal-addBook form label{
+    display:block;
+    padding: 10px 0 20px 0;
+    font-family: poppins;
+}
+
+.modal-addBook form button{
+    font-family: poppins;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.center { display: flex; justify-content: center; align-items: center;}
+
+/* The Close Button */
+.close {color: #aaa; float: right; font-size: 28px; font-weight: bold;}
+.close:hover,.close:focus {color: black;text-decoration: none;cursor: pointer;}
+
+.content_datatable table {border: 2px solid grey; border-collapse: collapse;}
+.content_datatable thead {background: linear-gradient(to bottom right, #47ef47, #5aff9f); text-transform: uppercase;}
+.content_datatable th {border: 1px solid grey;}
+
+#tablearea tr:nth-child(even) {background-color: #f2f2f2;}
+#tablearea th {border-right: 1px solid grey; border-left: 1px solid grey;}
+#tablearea tr td {padding: 5px; text-align: center; border-right: 1px solid grey; border-left: 1px solid grey;}
+#tablearea tr td p {font-size: 15px;}
 
 @media(max-width:720px){
     .header_admin{
