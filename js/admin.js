@@ -97,7 +97,7 @@ getKatalog.then(users => {
             tablearea.innerHTML += tr;
         }
 
-    findButton.addEventListener('click', function(){
+    findButton.addEventListener('click', function(e){
         tablearea.innerHTML = "";
         for(let user in users){
             let tempInduk = users[user].noInduk;
@@ -138,6 +138,32 @@ getKatalog.then(users => {
                     </tr>
                 `;
                 tablearea.innerHTML += tr;
+            }
+            else{
+                Swal.fire({
+                    title: 'Tidak ada data buku yang dicari',
+                    icon: 'warning',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'Oke'
+                }).then((result) => {
+                    if (result.isConfirmed){
+                        Swal.close();}
+                    const tr = `
+                        <tr data-id=${user}>
+                        <td><p>${users[user].noInduk}</p></td>
+                        <td><p>${users[user].jenisBuku}</p></td>
+                        <td><p>${users[user].pengarang}</p></td>
+                        <td><p>${users[user].judul}</p></td>
+                        <td><p>${users[user].kelas}</p></td>
+                        <td><p>${users[user].lemari}</p></td>
+                        <td>
+                            <button class="cek">Cek</button>
+                        </td>
+                        </tr>
+                    `;
+                    tablearea.innerHTML += tr;
+                })
+                e.preventDefault();
             }
 
         }
