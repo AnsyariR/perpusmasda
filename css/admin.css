@@ -74,10 +74,13 @@ height: 70%;
 border-radius: 10px;
 }   
 
-/* .modal-addBook p{
-    font-size: 30px;
-    font-weight: bold;
-} */
+.modal-addBook p#head_addBook{
+    text-align: center; 
+    font-size: 30px; 
+    font-weight: bold; 
+    position: relative; 
+    left: 3%;
+}
 
 .modal-addBook form{
     margin: 20px;
@@ -98,14 +101,12 @@ border-radius: 10px;
     max-width: 200px;
     margin-left: 20px;
     padding: 5px 0;
-    font-family: poppins;
 }
 
 .modal-addBook form select{
     float: right;
     width: 201px;
     padding: 5px 0;
-    font-family: poppins;
 }
 
 .modal-addBook form label{
@@ -153,7 +154,6 @@ border-radius: 10px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
 }
 
 .modal-checkBook form#checkform table{
@@ -183,7 +183,6 @@ border-radius: 10px;
 .closeCheckBook {color: #aaa; float: right; font-size: 28px; font-weight: bold; position: relative; z-index: 3;}
 .closeCheckBook:hover,.closeCheckBook:focus {color: black;text-decoration: none;cursor: pointer;}
 
-.content_datatable{}
 @media(max-width:720px){
     .header_admin{
         height: 40px;
@@ -265,4 +264,112 @@ border-radius: 10px;
         padding: 2px;
     }
 
+    .modal-addBook{
+        width: 90%;
+        height: 90%;
+    }
+
+    .modal-addBook p#head_addBook{
+        text-align: center; 
+        font-size: 15px; 
+        font-weight: bold; 
+        position: relative; 
+        left: 3%;
+    }
+
+    .modal-addBook form{
+        width: 70%;
+        height: 70%;
+        margin: 10px 0 0;
+    }
+
+    .modal-addBook form label{
+        font-size: 10px;
+    }
+
+    .modal-addBook form input{
+        float: right;
+        max-width: 130px;
+        margin-left: 10px;
+        padding: 1px 0;
+        font-size: 10px;
+    }
+
+    .modal-addBook form select{
+        float: right;
+        width: 131px;
+        padding: 1px 0;
+        font-size: 10px;
+    }
+
+    .modal-addBook form button{
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .closeAddBook{
+        font-size: 20px;
+    }
+
+    .modal-checkbook {
+        width: 90vw;
+        height: 90vh;
+    } 
+
+    .modal-checkbook p#head_checkBook{
+        text-align: center; 
+        font-size: 15px; 
+        font-weight: bold; 
+        position: relative; 
+        /* left: 1%; */
+    }
+
+    .modal-checkBook form#checkform table{
+        width: 77vw;
+        border-collapse: collapse;
+        transform: none;
+        top: 100px;
+        left: auto;
+    }
+
+    .modal-checkBook form#checkform table tr{
+        padding: 1px;
+        width: 10px;   
+    }
+
+    .modal-checkBook form#checkform table td{
+        padding: 15px 5px;
+        width: 10px;   
+        height: fit-content;
+
+    }
+
+        .modal-checkBook form#checkform table tr th{
+            padding: 1px;
+            width: 10px;
+            height: 10px;
+        }
+       
+    .modal-checkBook form#checkform table tr label, span, th{
+        font-size: 8px;
+    }
+
+    /* .modal-checkBook form#checkform table th{
+        width: 250px;
+        height: 300px;
+    } */
+
+    .modal-checkBook #labelJudul, #labelPengarang, #labelJenis, #labelKelas, #labelNoInduk{
+        /* background-color: red; */
+        max-width: 20px;
+        max-height: 10px;
+        
+    }
+
+    .modal-checkBook form#checkform table th #cekGambar{
+        width: 20px;
+    }
 }

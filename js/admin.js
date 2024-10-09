@@ -155,7 +155,7 @@ getKatalog.then(users => {
         cek.addEventListener('click', () =>{
             document.querySelector(".check").style.display = "block";
             let userId = cek.parentElement.parentElement.dataset.id;
-            // console.log(userId);
+            console.log(userId);
             const dbRef = ref(db);
             get(child(dbRef, `Katalog/all/${userId}`)).then((snapshot) => {
                 cekJenis.innerHTML = snapshot.val().jenisBuku;
@@ -169,8 +169,8 @@ getKatalog.then(users => {
     })
 });
     
-let span = document.getElementsByClassName("close")[0];
-let spanCek = document.getElementsByClassName("closeCheckbook")[0];
+let spanAdd = document.getElementsByClassName("closeAddBook")[0];
+let spanCek = document.getElementsByClassName("closeCheckBook")[0];
 
 spanCek.onclick = function(){
     document.querySelector(".check").style.display = "none"; 
@@ -182,7 +182,7 @@ addButton.onclick = function() {
 }
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+spanAdd.onclick = function() {
   modal.style.display = "none";
 }
 

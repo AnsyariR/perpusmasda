@@ -40,7 +40,7 @@
             <!-- Modal content -->
             <div class="modal-addBook">
                 <span class="closeAddBook">&times;</span>
-                <p style="text-align: center; font-size: 30px; font-weight: bold; position: relative; left: 3%;">Tambahkan Buku <span id="findText"></span></p>
+                <p id="head_addBook">Tambahkan Buku <span id="findText"></span></p>
                 <div>
                     <form action="" id="addform">
                         <label for="noInduk">Nomor Induk<input type="text" placeholder=" ..." id="noInduk"></label>
@@ -84,35 +84,35 @@
     </div>
 
     <div class="modal check">
-        <div class="modal-checkbook">
-            <span class="closeCheckbook">&times;</span>
-            <p style="text-align: center; font-size: 30px; font-weight: bold; position: relative; left: 1%;">Detail Buku</p>
+        <div class="modal-checkBook">
+            <span class="closeCheckBook">&times;</span>
+            <p id="head_checkBook">Detail Buku</p>
             <form action="" id="checkform">
                 <table>
                     <tr>
-                        <th rowspan="4">Gambar</th>
-                        <td><label for="">Judul Buku</label></td>
+                        <th id="cekGambar" rowspan="4" style="width: 10px;">Gambar</th>
+                        <td id="labelJudul"><label for="">Judul Buku</label></td>
                         <td><span  id="judulCek"></span></td>
                     </tr>
                     <tr>
-                        <td><label for="">Pengarang</label></td>
+                        <td id="labelPengarang"><label for="">Pengarang</label></td>
                         <td><span id="pengarangCek"></span></td>
                     </tr>
                     <tr>
-                        <td><label for="">Jenis Buku</label></td>
+                        <td id="labelJenis"><label for="">Jenis Buku</label></td>
                         <td><span id="jenisCek"></span></td>
                     </tr>
                     <tr>
-                        <td><label for="">Kelas</label></td>
+                        <td id="labelKelas"><label for="">Kelas</label></td>
                         <td><span id="kelasCek"></span></td>
                     </tr>
                     <tr>
-                        <td><label for="">Nomor Lemari<span id="noLemariCek"></span></label><br></td>
-                        <td><label for="">Nomor Induk</label></td>
+                        <td id="labelNoLemari"><label for="">Nomor Lemari<span id="noLemariCek"></span></label><br></td>
+                        <td id="labelNoInduk"><label for="">Nomor Induk</label></td>
                         <td><span id="noIndukCek"></span></td>
                     </tr>
                 </table>
-                <button class="edit">Edit</button> 
+                <!-- <button class="edit">Edit</button>  -->
             </form>
         </div>
     </div>
