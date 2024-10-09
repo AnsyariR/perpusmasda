@@ -148,6 +148,24 @@ getKatalog.then(users => {
                 tablearea.innerHTML += tr;
             }
         }
+
+        let checkButtons = document.querySelectorAll(".cek");
+        checkButtons.forEach((cek) =>{
+            cek.addEventListener('click', () =>{
+                document.querySelector(".check").style.display = "block";
+                let userId = cek.parentElement.parentElement.dataset.id;
+                console.log(userId);
+                const dbRef = ref(db);
+                get(child(dbRef, `Katalog/all/${userId}`)).then((snapshot) => {
+                    cekJenis.innerHTML = snapshot.val().jenisBuku;
+                    cekPengarang.innerHTML = snapshot.val().pengarang;
+                    cekJudul.innerHTML = snapshot.val().judul;
+                    cekKelas.innerHTML = snapshot.val().kelas;
+                    cekLemari.innerHTML = snapshot.val().lemari;
+                    cekInduk.innerHTML = snapshot.val().noInduk;
+                });
+            })
+        })
     })
 
     let checkButtons = document.querySelectorAll(".cek");
