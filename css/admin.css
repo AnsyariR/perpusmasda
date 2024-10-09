@@ -3,7 +3,7 @@ body, html { width: 100%;}
 .header_admin{ position: fixed; z-index: 1; height: 60px; width: 100%; background-color: forestgreen;}
 
 #logo { position: absolute; width: 55px; top: 50%; left: 30%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);}
-#title { position: absolute; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); color: white; font-size: 20px; font-weight: 600;}
+#title { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 20px; font-weight: 600;}
 #logout { position: absolute; top: 10px; right: 10px;}
 #logout button { border-radius: 10px; border: transparent; padding: 10px; font-size: 15px; font-weight: 400; font-family: 'Poppins',sans-serif; cursor: pointer; background: linear-gradient(to bottom right, #47ef47, #5aff9f);}
 #logout button:hover { color: aliceblue; background-color: rgb(21, 80, 40);}
@@ -203,11 +203,14 @@ border-radius: 10px;
 
     #logo{
         width: 30px;
-        left: 5%;
+        left: 10%;
     }
 
     #title{
-        font-size: 9px;
+        position: relative;
+        font-size: 10px;
+        display: flex;
+        justify-content: center;
     }
 
     .content_admin{
@@ -230,18 +233,18 @@ border-radius: 10px;
     }
 
     .content_datatable{
-        top: 43%;
+        top: 220px;
         left: 50%;
         transform: translate(-50%, -50%);
     }
 
     .content_datatable #thInduk, #thJenis, #thKelas, #thNoLemari, #thInfo{
-        padding: 2px 15px;
+        padding: 1px 10px;
         font-size: 10px;
     }
     
     .content_datatable #thPengarang, #thJudul{
-        padding: 2px 35px;
+        padding: 1px 35px;
         font-size: 10px;
     }
 
@@ -262,7 +265,4 @@ border-radius: 10px;
         padding: 2px;
     }
 
-    #logout{
-        right: 30px;
-    }
 }
