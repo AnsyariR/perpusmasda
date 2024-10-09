@@ -39,7 +39,7 @@
         <div id="myModal" class="modal">
             <!-- Modal content -->
             <div class="modal-addBook">
-                <span class="close">&times;</span>
+                <span class="closeAddBook">&times;</span>
                 <p style="text-align: center; font-size: 30px; font-weight: bold; position: relative; left: 3%;">Tambahkan Buku <span id="findText"></span></p>
                 <div>
                     <form action="" id="addform">
@@ -70,17 +70,51 @@
         <table>
             <thead>
                 <tr class="trText">
-                    <th style="padding: 5px 10px;">No. Induk</th>
-                    <th style="padding: 5px 10px;">Jenis Buku</th>
-                    <th style="padding: 5px 100px;">Pengarang</th>
-                    <th style="padding: 5px 100px;">Judul</th>
-                    <th style="padding: 5px 10px;">Kelas</th>
-                    <th style="padding: 5px 10px;">No. Lemari</th>
-                    <th style="padding: 5px 10px;" class="keteranganButton">Info</th>
+                    <th id="thInduk">No. Induk</th>
+                    <th id="thJenis">Jenis Buku</th>
+                    <th id="thPengarang">Pengarang</th>
+                    <th id="thJudul">Judul</th>
+                    <th id="thKelas">Kelas</th>
+                    <th id="thNoLemari">No. Lemari</th>
+                    <th id="thInfo">Info</th>
                 </tr>
             </thead>
             <tbody id="tablearea"></tbody>
         </table>
+    </div>
+
+    <div class="modal check">
+        <div class="modal-checkbook">
+            <span class="closeCheckbook">&times;</span>
+            <p style="text-align: center; font-size: 30px; font-weight: bold; position: relative; left: 1%;">Detail Buku</p>
+            <form action="" id="checkform">
+                <table>
+                    <tr>
+                        <th rowspan="4">Gambar</th>
+                        <td><label for="">Judul Buku</label></td>
+                        <td><span  id="judulCek"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Pengarang</label></td>
+                        <td><span id="pengarangCek"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Jenis Buku</label></td>
+                        <td><span id="jenisCek"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Kelas</label></td>
+                        <td><span id="kelasCek"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Nomor Lemari<span id="noLemariCek"></span></label><br></td>
+                        <td><label for="">Nomor Induk</label></td>
+                        <td><span id="noIndukCek"></span></td>
+                    </tr>
+                </table>
+                <button class="edit">Edit</button> 
+            </form>
+        </div>
     </div>
 </body>
 </html>

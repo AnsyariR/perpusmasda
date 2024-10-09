@@ -9,17 +9,25 @@ const firebaseConfig = {
 };
 
 import {initializeApp} from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
-import {getDatabase, ref, set, query, onValue, orderByChild} from "https://www.gstatic.com/firebasejs/9.8.2/firebase-database.js";
+import {getDatabase, ref, set, get, query, onValue, child} from "https://www.gstatic.com/firebasejs/9.8.2/firebase-database.js";
 const app = initializeApp(firebaseConfig);
 const db = getDatabase();
 
-// Data Buku
+// Tabel Data Buku
 let induk = document.querySelector("#noInduk");
 let jenis = document.querySelector("#jenisBuku");
 let pengarang = document.querySelector("#pengarang");
 let judul = document.querySelector("#judul");
 let kelas = document.querySelector("#kelas");
 let lemari = document.querySelector("#noLemari");
+
+// Cek Data Buku
+let cekInduk = document.querySelector("#noIndukCek");
+let cekJenis = document.querySelector("#jenisCek");
+let cekPengarang = document.querySelector("#pengarangCek");
+let cekJudul = document.querySelector("#judulCek");
+let cekKelas = document.querySelector("#kelasCek");
+let cekLemari = document.querySelector("#noLemariCek");
 
 // Mencari data buku berdasarkan no induk
 let searchInput = document.querySelector("#searchInput");
@@ -141,10 +149,32 @@ getKatalog.then(users => {
             }
         }
     })
+
+    let checkButtons = document.querySelectorAll(".cek");
+    checkButtons.forEach((cek) =>{
+        cek.addEventListener('click', () =>{
+            document.querySelector(".check").style.display = "block";
+            let userId = cek.parentElement.parentElement.dataset.id;
+            // console.log(userId);
+            const dbRef = ref(db);
+            get(child(dbRef, `Katalog/all/${userId}`)).then((snapshot) => {
+                cekJenis.innerHTML = snapshot.val().jenisBuku;
+                cekPengarang.innerHTML = snapshot.val().pengarang;
+                cekJudul.innerHTML = snapshot.val().judul;
+                cekKelas.innerHTML = snapshot.val().kelas;
+                cekLemari.innerHTML = snapshot.val().lemari;
+                cekInduk.innerHTML = snapshot.val().noInduk;
+            });
+        })
+    })
 });
     
-
 let span = document.getElementsByClassName("close")[0];
+let spanCek = document.getElementsByClassName("closeCheckbook")[0];
+
+spanCek.onclick = function(){
+    document.querySelector(".check").style.display = "none"; 
+}
 
 // When the user clicks the button, open the modal 
 addButton.onclick = function() {
@@ -162,3 +192,4 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+

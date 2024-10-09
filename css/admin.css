@@ -1,5 +1,5 @@
 * {padding: 0; margin: 0; box-sizing: border-box; font-family: 'Poppins',sans-serif;}
-
+body, html { width: 100%;}
 .header_admin{ position: fixed; z-index: 1; height: 60px; width: 100%; background-color: forestgreen;}
 
 #logo { position: absolute; width: 55px; top: 50%; left: 30%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);}
@@ -10,10 +10,10 @@
 
 .content_admin{
     position: absolute;
+    /* width: 100%; */
     /* z-index: 2; */
     top: 15%;
     left: 50%;
-    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 
@@ -40,6 +40,15 @@
     /* -ms-transform: translate(-50%, -50%); */
     /* transform: translate(-50%, -50%); */
 }
+
+.content_datatable #thInduk, #thJenis, #thKelas, #thNoLemari, #thInfo{
+    padding: 5px 10px;
+}
+
+.content_datatable #thPengarang, #thJudul{
+    padding: 5px 100px;
+}
+
     /* The Modal (background) */
 .modal {
 display: none; /* Hidden by default */
@@ -116,8 +125,8 @@ border-radius: 10px;
 .center { display: flex; justify-content: center; align-items: center;}
 
 /* The Close Button */
-.close {color: #aaa; float: right; font-size: 28px; font-weight: bold;}
-.close:hover,.close:focus {color: black;text-decoration: none;cursor: pointer;}
+.closeAddBook {color: #aaa; float: right; font-size: 28px; font-weight: bold; position: relative; z-index: 3;}
+.closeAddBook:hover,.closeAddBook:focus {color: black;text-decoration: none;cursor: pointer;}
 
 .content_datatable table {border: 2px solid grey; border-collapse: collapse;}
 .content_datatable thead {background: linear-gradient(to bottom right, #47ef47, #5aff9f); text-transform: uppercase;}
@@ -128,9 +137,57 @@ border-radius: 10px;
 #tablearea tr td {padding: 5px; text-align: center; border-right: 1px solid grey; border-left: 1px solid grey;}
 #tablearea tr td p {font-size: 15px;}
 
+.modal-checkBook {
+    background-color: #fefefe;
+    margin: 7.5% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%; /* Could be more or less, depending on screen size */
+    height: 70%;
+    border-radius: 10px;
+} 
+
+.modal-checkBook table{
+    /* border: 1px solid black; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.modal-checkBook form#checkform table{
+    width: 700px;
+    border-collapse: collapse;
+}
+
+
+.modal-checkBook form#checkform table th{
+    width: 250px;
+    height: 300px;
+}
+
+.modal-checkBook form#checkform table td{
+    height: 50px;
+    padding: 10px;
+}
+
+.modal-checkBook form#checkform table td span:before{
+    content: ": ";
+}
+
+.modal-checkBook tr:nth-child(odd){
+    background-color:#e6e2e2;
+}
+
+.closeCheckBook {color: #aaa; float: right; font-size: 28px; font-weight: bold; position: relative; z-index: 3;}
+.closeCheckBook:hover,.closeCheckBook:focus {color: black;text-decoration: none;cursor: pointer;}
+
+.content_datatable{}
 @media(max-width:720px){
     .header_admin{
         height: 40px;
+        width: 100vw;
     }
     
     #logout{
@@ -151,5 +208,61 @@ border-radius: 10px;
 
     #title{
         font-size: 9px;
+    }
+
+    .content_admin{
+        position: fixed;
+        top: 70px;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+    }
+
+    .content_admin #searchInput{
+        width: 50%;
+        margin: 0 5px;
+        font-size: 10px;
+    }
+
+    .content_admin button{
+        padding: 2% 1%;
+        font-size: 10px;
+    }
+
+    .content_datatable{
+        top: 43%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .content_datatable #thInduk, #thJenis, #thKelas, #thNoLemari, #thInfo{
+        padding: 2px 15px;
+        font-size: 10px;
+    }
+    
+    .content_datatable #thPengarang, #thJudul{
+        padding: 2px 35px;
+        font-size: 10px;
+    }
+
+    .content_datatable #thNoLemari, #thJenis, #thKelas{
+        display: none;
+    }
+
+    .content_datatable td:nth-child(2), td:nth-child(5), td:nth-child(6){
+        display: none;
+    }
+
+    #tablearea tr td p{
+        font-size: 10px;
+    }
+
+    #tablearea tr td button{
+        font-size: 10px;
+        padding: 2px;
+    }
+
+    #logout{
+        right: 30px;
     }
 }
