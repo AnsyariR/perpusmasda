@@ -1,17 +1,10 @@
 * {padding: 0; margin: 0; box-sizing: border-box; font-family: 'Poppins',sans-serif;}
-body, html { width: 100%;}
 .header_admin{ position: fixed; z-index: 1; height: 60px; width: 100%; background-color: forestgreen;}
-
 #logo { position: absolute; width: 55px; top: 50%; left: 30%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);}
 #title { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 20px; font-weight: 600;}
-#logout { position: absolute; top: 10px; right: 10px;}
-#logout button { border-radius: 10px; border: transparent; padding: 10px; font-size: 15px; font-weight: 400; font-family: 'Poppins',sans-serif; cursor: pointer; background: linear-gradient(to bottom right, #47ef47, #5aff9f);}
-#logout button:hover { color: aliceblue; background-color: rgb(21, 80, 40);}
 
 .content_admin{
     position: absolute;
-    /* width: 100%; */
-    /* z-index: 2; */
     top: 15%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -23,22 +16,17 @@ body, html { width: 100%;}
     border-radius: 5px;
     background-color: #47ef47;
     font-size: 15px;
-    font-family: poppins;
 }
 
 .content_admin input{
     padding: 5px;
     border: 2px solid green;
-    font-family: poppins;
 }
 
 .content_datatable{
-    /* border-collapse: collapse; */
     position: absolute;
     top: 20%;
     left: 12%; 
-    /* -ms-transform: translate(-50%, -50%); */
-    /* transform: translate(-50%, -50%); */
 }
 
 .content_datatable #thInduk, #thJenis, #thKelas, #thNoLemari, #thInfo{
@@ -51,26 +39,26 @@ body, html { width: 100%;}
 
     /* The Modal (background) */
 .modal {
-display: none; /* Hidden by default */
-position: fixed; /* Stay in place */
-z-index: 1; /* Sit on top */
+display: none;
+position: fixed;
+z-index: 1;
 left: 0;
 top: 0;
-width: 100%; /* Full width */
-height: 100%; /* Full height */
-overflow: auto; /* Enable scroll if needed */
-background-color: rgb(0,0,0); /* Fallback color */
-background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgb(0,0,0);
+background-color: rgba(0,0,0,0.4)
 }
 
 /* Modal Content/Box */
 .modal-addBook {
 background-color: #fefefe;
-margin: 7.5% auto; /* 15% from the top and centered */
+margin: 3% auto; /* 15% from the top and centered */
 padding: 20px;
 border: 1px solid #888;
 width: 40%; /* Could be more or less, depending on screen size */
-height: 70%;
+height: 85%;
 border-radius: 10px;
 }   
 
@@ -112,11 +100,9 @@ border-radius: 10px;
 .modal-addBook form label{
     display:block;
     padding: 10px 0 20px 0;
-    font-family: poppins;
 }
 
 .modal-addBook form button{
-    font-family: poppins;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -140,11 +126,11 @@ border-radius: 10px;
 
 .modal-checkBook {
     background-color: #fefefe;
-    margin: 7.5% auto; /* 15% from the top and centered */
+    margin: 3% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 60%; /* Could be more or less, depending on screen size */
-    height: 70%;
+    height: 85%;
     border-radius: 10px;
 } 
 
@@ -265,6 +251,7 @@ border-radius: 10px;
     }
 
     .modal-addBook{
+        margin: 7.5% auto;
         width: 90%;
         height: 90%;
     }
@@ -317,6 +304,7 @@ border-radius: 10px;
     .modal-checkbook {
         width: 90vw;
         height: 90vh;
+        margin: 7.5% auto;
     } 
 
     .modal-checkbook p#head_checkBook{
@@ -357,13 +345,7 @@ border-radius: 10px;
         font-size: 8px;
     }
 
-    /* .modal-checkBook form#checkform table th{
-        width: 250px;
-        height: 300px;
-    } */
-
     .modal-checkBook #labelJudul, #labelPengarang, #labelJenis, #labelKelas, #labelNoInduk{
-        /* background-color: red; */
         max-width: 20px;
         max-height: 10px;
         
